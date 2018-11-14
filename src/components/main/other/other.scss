@@ -1,0 +1,41 @@
+$max:100%;
+$min:0%;
+@mixin commonStyle($display,$width) {
+    display: $display;
+    width: $width;
+}
+.other {
+    @include commonStyle(block,15% );
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    //background: #03152B
+}
+.reward {
+    @include commonStyle(block,80% );
+    height: 32%;
+    margin: 10% auto;
+    padding:0 5%;
+    background: #03152B;
+    border-radius: 0.5rem;
+    p{
+        color: red;
+        font: {
+            
+        }
+        border: {
+            bottom: 1px solid black
+        } 
+        height: 10%;
+    }
+    div{
+        background: {
+            image:url('./cost.png');
+            size: $max $max;
+        }
+        width: 10rem;
+        height: 10rem;
+        margin: 1rem auto;
+    }
+}
