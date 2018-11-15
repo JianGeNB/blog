@@ -50,7 +50,7 @@ $min:0%;
 }
 .navLink{
     p{
-        @include commonStyle(inline-block,1rem );
+        @include commonStyle(inline-block,1.5rem );
         height: 1.5rem;
         line-height: 1.5rem;
         background: {
