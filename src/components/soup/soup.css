@@ -1,0 +1,12 @@
+.soupLi {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.soupLi div {
+  width: 8rem;
+  height: 7rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

@@ -14,3 +14,11 @@
   margin-bottom: 3%;
   border-bottom: 1px solid;
 }
+
+.content p {
+  margin-bottom: 1%;
+}
+
+pre {
+  white-space: pre-line;
+}

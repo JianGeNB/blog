@@ -4,7 +4,7 @@ import React from 'react';
 class Home extends React.Component{
     render(){
         return(
-            <div>主页</div>
+            <h1 style={{width:'100%',textAlign:'center'}}>Hello World</h1>
         )
     }
 }

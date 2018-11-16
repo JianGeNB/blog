@@ -6,7 +6,7 @@ $min:0%;
 }
 .details {
     @include commonStyle(block,70% );
-    height: $max;
+    //height: $max;
     margin: {
         left:15%
     };

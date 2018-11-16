@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 import React from 'react';
-import './other.scss'
+import './other.scss'       
 
 class Other extends React.Component{
     render(){
@@ -9,6 +9,19 @@ class Other extends React.Component{
                 <div className="reward">
                     <p>打赏</p>
                     <div ></div>
+                </div>
+                <div className='contact'>
+                    <p>联系方式</p>
+                    <pre>
+                    {`QQ:478671803
+
+                    邮箱:z8957276@gmail.com
+                    
+                    github:z8957276@gmail.com`}
+                    </pre>
+                </div>
+                <div className='thank'>
+                <p>鸣谢</p>
                 </div>
             </div>
         )

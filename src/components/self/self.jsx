@@ -8,7 +8,11 @@ class Self extends React.Component{
                 <h1 className='title'>关于我</h1>
                 <div>
                     <h2>自我介绍</h2>
-                    <p>我是一个已经从事前端编程行业半年的码农，业余爱好就是写写博客,学习一些新知识。</p>
+                    <p>网名:渐歌</p>
+                    <p>年龄:22</p>
+                    <p>QQ:478671803</p>
+                    <p>星座:射手</p>
+                    <p>目前从事5个月的前端开发工作</p>
 
                 </div>
             </div>

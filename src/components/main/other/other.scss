@@ -10,12 +10,12 @@ $min:0%;
     position: fixed;
     right: 0;
     top: 0;
-    //background: #03152B
+    background: #1B1B1B
 }
-.reward {
+.reward,.contact,.thank{
     @include commonStyle(block,80% );
     height: 32%;
-    margin: 10% auto;
+    margin: 0% auto 10%;
     padding:0 5%;
     background: #03152B;
     border-radius: 0.5rem;
@@ -38,4 +38,17 @@ $min:0%;
         height: 10rem;
         margin: 1rem auto;
     }
+}
+.contact {
+    height: 20%;
+    p{
+        height: 15%;
+        margin-bottom: 5%
+    }
+    pre {
+        color:white
+    }
+}
+.thank {
+    height: 42%;
 }

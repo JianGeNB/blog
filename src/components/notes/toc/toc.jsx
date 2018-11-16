@@ -1,12 +1,17 @@
 /* jshint esversion: 6 */
 import React from 'react';
 import '../../self/self.scss';
-import StudyReact from '../reactstudy/reactstudy'
+import StudyReact from '../reactstudy/reactstudy';
+import JStudy from '../jstudy/jstudy'
 import { Link, Switch, Route } from 'react-router-dom';
 export const TocLists = [{
     title: 'React学习笔记',
     key: '/Notes/reactstudy',
     component: StudyReact
+},{
+    title:'JS学习笔记',
+    key:'/Notes/jstudy',
+    component:JStudy
 }]
 class Toc extends React.Component {
     render() {
@@ -18,7 +23,7 @@ class Toc extends React.Component {
                     <div>
                         <h2>目录</h2>
                         {TocLists.map((item, index) => (
-                            <p key={index}><Link to={item.key}>{index + 1}.{item.title}</Link></p>
+                            <p key={index} style={{marginBottom:'1rem'}}><Link to={item.key} style={{color:'#ffffff',textDecoration:'none'}}>{index + 1}.{item.title}</Link></p>
                         ))}
                     </div>
                 </div>
