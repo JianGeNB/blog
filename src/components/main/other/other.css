@@ -6,11 +6,12 @@
   right: 0;
   top: 0;
   background: #1B1B1B;
+  font-size: 0.2rem;
 }
 
 .reward, .contact, .thank {
   display: block;
-  width: 80%;
+  width: 95%;
   height: 32%;
   margin: 0% auto 10%;
   padding: 0 5%;

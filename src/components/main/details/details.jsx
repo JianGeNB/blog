@@ -4,7 +4,8 @@ import {Switch,Route}from 'react-router-dom';
 import Home from '../../home/home';
 import Self from '../../self/self';
 import Toc from '../../notes/toc/toc';
-import Soup from '../../soup/soup'
+import Soup from '../../soup/soup';
+import Comment from '../../comment/comment';
 import './details.scss';
 
 export const navList = [
@@ -29,7 +30,12 @@ export const navList = [
         title:'个人',
         icon:'./self.png',
         component:Self
-    },
+    },{
+        key:'/comment',
+        title:'留言',
+        icon:'./liuyan.png',
+        component:Comment
+    }
     
 ]
 class Details extends React.Component{

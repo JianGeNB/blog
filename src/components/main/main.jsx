@@ -9,7 +9,7 @@ import RouteConfirm from './RouteConfirm.js'
 class Main extends React.Component {
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div style={{ height: '100%' }}>
                 <BrowserRouter>
