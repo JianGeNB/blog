@@ -1,6 +1,9 @@
 const express = require('express');
 const path =require('path');
+const bodyParser = require('body-parser');
 const router = express.Router();
+const commentModule = require('./comment/comment');
+  const  comment = commentModule.getModel('comments');
 
 const app = express();
 
@@ -18,13 +21,29 @@ const soupList = [{
 router.get('/checkenSoup',function(req,res){
     return res.json({code:0,soupList})
 })
+router.get('/comment',function(req,res){
+    let infos;
+     comment.find({},function(req,doc){
+        infos = doc
+        return res.json({code:0,commitList:infos})
+    })
+})
+router.post('/add',function(req,res){
+    const info = req.body;
+    console.log(req.body)
+    console.log(info)
+     comment.create(info,function(err,doc){
+        return res.json({code:0,msg:'评论成功'})
+     })
+})
 app.use(function (req,res,next) {
-    if(req.url.startsWith('/checkenSoup')||req.url.startsWith('/static/')){
+    if(req.url.startsWith('/checkenSoup')||req.url.startsWith('/comment')||req.url.startsWith('/add')||req.url.startsWith('/static/')){
         return next()
     }
     return res.sendFile(path.resolve('../build/index.html'))
 })
 app.use('/',express.static(path.resolve('../build')))
+app.use(bodyParser.json());
 app.use(router)
 app.listen(23456,function () {
     console.log('server is start')

@@ -1,11 +1,10 @@
 import React from 'react';
 import '../self/self.scss';
 import './comment.scss';
-import axios from 'axios';
 import {withRouter}from 'react-router-dom';
-import { List, Input, Button, Avatar,message} from 'antd';
+import { List, Input, Button, Avatar} from 'antd';
 import { connect } from 'react-redux';
-import { allCommit } from '../../redux/comment';
+import { allCommit,addComment } from '../../redux/comment';
 
 
 const { TextArea } = Input;
@@ -14,7 +13,7 @@ let i;
 
 @connect(
     state => state.commentReducer,
-    { allCommit }
+    { allCommit ,addComment}
 )
 class Comment extends React.Component {
     constructor(props){
@@ -25,44 +24,31 @@ class Comment extends React.Component {
         }
         this.click = this.click.bind(this)
         this.handleChange = this.handleChange.bind(this)
-        this.close = this.close.bind(this)
     }
     componentWillMount() {
         this.props.allCommit();
-        this.setState(
-            {allCommit:this.props.cdata}
-        )
+        
     }
+    
     handleChange(e){
         this.setState({
             comment:e.target.value
         })
     }
-    close(){
+    click(){
+        i =this.state.comment;
+        
         this.setState({
             comment:''
         })
-        this.setState({
-            allCommit:[...this.state.allCommit,{info:i}]
-        })
-        
-    }
-    click(){
-        i =this.state.comment;
-        axios.post('/add',{info:i}).then(rdata=>{
-            if(rdata.data.code===0){
-                message.success('评论成功',1,this.close);
-            
-            }else{
-                message.error('评论失败');
-            }
-        })
+        // message.success('评论成功',1);
+        this.props.addComment(i)
     }
     render() {
         const comment = this.state.comment;
         const dataArr =[];
-        for(let i = this.state.allCommit.length-1;i>=0;i--){
-            dataArr.push(this.state.allCommit[i])
+        for(let i = this.props.cdata.length-1;i>=0;i--){
+            dataArr.push(this.props.cdata[i])
         }
         return (
             <div className='content'>
