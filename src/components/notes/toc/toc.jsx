@@ -3,6 +3,7 @@ import React from 'react';
 import '../../self/self.scss';
 import StudyReact from '../reactstudy/reactstudy';
 import JStudy from '../jstudy/jstudy'
+import GitHelp from '../githelp/githelp'
 import { Link, Switch, Route } from 'react-router-dom';
 export const TocLists = [{
     title: 'React学习笔记',
@@ -12,6 +13,10 @@ export const TocLists = [{
     title:'JS学习笔记',
     key:'/Notes/jstudy',
     component:JStudy
+},{
+    title:'git使用整理',
+    key:'/Notes/githelp',
+    component:GitHelp
 }]
 class Toc extends React.Component {
     render() {
