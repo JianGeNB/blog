@@ -13,7 +13,6 @@ class Self extends React.Component{
                     <p>QQ:478671803</p>
                     <p>星座:射手</p>
                     <p>目前从事5个月的前端开发工作</p>
-
                 </div>
             </div>
         )

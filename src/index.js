@@ -10,7 +10,7 @@ import reducers from './redux/reducers.jsx';
 import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducers,compose(applyMiddleware(thunk),window.devToolsExtension?window.devToolsExtension():()=>{}));
+const store = createStore(reducers,compose(applyMiddleware(thunk)));
 ReactDOM.render(
     <Provider store={store}>
         <Main />
