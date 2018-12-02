@@ -30,8 +30,8 @@ router.get('/comment',function(req,res){
 })
 router.post('/add',function(req,res){
     const info = req.body;
-    console.log(req.body)
-    console.log(info)
+    // console.log(req.body)
+    // console.log(info)
      comment.create(info,function(err,doc){
         return res.json({code:0,msg:'评论成功'})
      })

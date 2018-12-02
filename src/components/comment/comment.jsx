@@ -5,6 +5,7 @@ import {withRouter}from 'react-router-dom';
 import { List, Input, Button, Avatar} from 'antd';
 import { connect } from 'react-redux';
 import { allCommit,addComment } from '../../redux/comment';
+import BaseHOC from '../../hoc/baseHOC'
 
 
 const { TextArea } = Input;
@@ -15,37 +16,31 @@ let i;
     state => state.commentReducer,
     { allCommit ,addComment}
 )
+@BaseHOC
 class Comment extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            comment:'',
-            allCommit:[]
-        }
+        // this.state = {
+        //     comment:'',
+        //     allCommit:[]
+        // }
         this.click = this.click.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+        // this.handleChange = this.handleChange.bind(this)
     }
     componentWillMount() {
         this.props.allCommit();
         
     }
     
-    handleChange(e){
-        this.setState({
-            comment:e.target.value
-        })
-    }
     click(){
-        i =this.state.comment;
+        i =this.props.state.comment;
         
-        this.setState({
-            comment:''
-        })
+        this.props.handleChange('comment','')
         // message.success('评论成功',1);
         this.props.addComment(i)
     }
     render() {
-        const comment = this.state.comment;
+        const comment = this.props.state.comment;
         const dataArr =[];
         for(let i = this.props.cdata.length-1;i>=0;i--){
             dataArr.push(this.props.cdata[i])
@@ -55,7 +50,7 @@ class Comment extends React.Component {
                 <h1 className='title'>留言板</h1>
                 <div>
                     <TextArea rows={4} placeholder='留言区' value={comment}
-                    onChange={this.handleChange}
+                        onChange={e => this.props.handleChange('comment',e.target.value)}
                     />
                     <Button type="primary" className='submit' onClick={this.click}>提交</Button>
                 </div>
