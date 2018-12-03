@@ -9,7 +9,7 @@
   font-size: 0.2rem;
 }
 
-.reward, .contact, .thank {
+.reward, .contact, .thank, .origin {
   display: block;
   width: 95%;
   height: 32%;
@@ -19,13 +19,13 @@
   border-radius: 0.5rem;
 }
 
-.reward p, .contact p, .thank p {
+.reward p, .contact p, .thank p, .origin p {
   color: red;
   border-bottom: 1px solid black;
   height: 10%;
 }
 
-.reward div, .contact div, .thank div {
+.reward div, .contact div, .thank div, .origin div {
   background-image: url("./cost.png");
   background-size: 100% 100%;
   width: 10rem;
@@ -46,6 +46,10 @@
   color: white;
 }
 
-.thank {
-  height: 42%;
+.origin {
+  height: 10%;
+}
+
+.origin p {
+  height: 30%;
 }

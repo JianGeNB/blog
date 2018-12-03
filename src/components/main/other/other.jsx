@@ -20,6 +20,12 @@ class Other extends React.Component{
                     github:z8957276@gmail.com`}
                     </pre>
                 </div>
+                <div className='origin'>
+                    <p>github源码</p>
+                    <pre>
+                        {`github.com/JianGeNB/blog`}
+                    </pre>
+                </div>
                 <div className='thank'>
                 <p>鸣谢</p>
                 </div>

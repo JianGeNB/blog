@@ -22,8 +22,8 @@ class GitHelp extends React.Component {
                     
                     2.更新:
                         <pre>
-                        {`1)git add * (添加所有文件，会检查变动的文件)
-                        2)git commit -m ""(引号内填写备注)
+                        {`1)git add * (添加所有文件)
+                        2)git commit -m ""(会检查变动的文件,引号内填写备注)
                         3)git push -u origin master(开始上传)
                         4)git push -f (如果在github上改动了文件才执行)
                         `}
