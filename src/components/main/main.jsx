@@ -7,10 +7,21 @@ import { BrowserRouter} from 'react-router-dom';
 import RouteConfirm from './RouteConfirm.js'
 
 class Main extends React.Component {
-
+    constructor(props){
+        super(props)
+        this.state = {
+            hasError:false
+        }
+    }
+    componentDidCatch(err,info){
+        this.setState({
+            hasError:true
+        })
+    }
     render() {
         // console.log(this.props)
-        return (
+        return this.state.hasError? <div style={{width:'100%'}}><img src={require('./404.jpg')} alt='' style={{display:'block',margin:'6rem auto'}}/></div>
+        :(
             <div style={{ height: '100%' }}>
                 <BrowserRouter>
                     <div style={{ height: '100%' }}>

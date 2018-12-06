@@ -1,12 +1,13 @@
 /* jshint esversion: 6 */
 import React from 'react';
-import {Switch,Route}from 'react-router-dom';
+import {Route,withRouter}from 'react-router-dom';
 import Home from '../../home/home';
 import Self from '../../self/self';
 import Toc from '../../notes/toc/toc';
 import Soup from '../../soup/soup';
 import Comment from '../../comment/comment';
 import './details.scss';
+import QueueAnim from 'rc-queue-anim'
 
 export const navList = [
     {
@@ -38,16 +39,22 @@ export const navList = [
     }
     
 ]
+@withRouter
 class Details extends React.Component{
     render(){
+        let page = navList.find(v=>v.key===this.props.location.pathname)
+        page=page===undefined?navList[1]:page
         return(
             <div className="details">
-                <Switch>
-                    {navList.map((item,index)=>{
-                        return <Route path={item.key} key={index} component={item.component}/>
-                    })
-                    }
-                </Switch>
+               
+                    <QueueAnim type='scale' duration={1000}>
+
+                    
+                    
+                         <Route path={page.key} key={page.key} component={page.component}/>
+                   
+                    </QueueAnim>
+                
                 
             </div>
         )

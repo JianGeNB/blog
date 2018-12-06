@@ -33,6 +33,7 @@ class Comment extends React.Component {
     }
     
     click(){
+    
         i =this.props.state.comment;
         
         this.props.handleChange('comment','')
@@ -67,10 +68,12 @@ class Comment extends React.Component {
                         dataSource={dataArr}
                         renderItem={item => (
                             <List.Item style={{color:'white'}}>
-                                <List.Item.Meta
+                                <List.Item.Meta style={{color:'white'}}
                                     avatar={<Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />}
+                                    title={item.time}
+                                    description={item.info}
                                 />
-                                {item.info}
+                
                             </List.Item>
                         )}
                     />

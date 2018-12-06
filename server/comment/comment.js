@@ -12,6 +12,7 @@ mongoose.connect(DB_URL,{useNewUrlParser:true},function(err){
 const models = {
     comments:{
         'info':{'type':String,'require':true},
+        'time':{'type':String,'require':true}
     }
 }
 for(let m in models){
