@@ -29,6 +29,10 @@ class Nav extends React.Component {
                     
                 })}
                 </QueueAnim>
+                <div style={{textAlign:'center'}}>
+                <a href="http://www.miitbeian.gov.cn/" target='blank'>蒙ICP备18005689号</a>
+                </div>
+            
                 {/* <div className='navList'>
                     {navList.map((item,index)=>{
                         

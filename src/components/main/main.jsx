@@ -20,7 +20,7 @@ class Main extends React.Component {
     }
     render() {
         // console.log(this.props)
-        return this.state.hasError? <div style={{width:'100%'}}><img src={require('./404.jpg')} alt='' style={{display:'block',margin:'6rem auto'}}/></div>
+        return this.state.hasError? <div style={{width:'100%'}}><img src={require('./404.jpg')} alt='' style={{display:'block',margin:'auto'}}/></div>
         :(
             <div style={{ height: '100%' }}>
                 <BrowserRouter>

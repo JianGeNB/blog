@@ -30,8 +30,8 @@ class Toc extends React.Component {
                         {TocLists.map((item, index) => (
                             <p key={index} style={{marginBottom:'1rem'}}><Link to={item.key} style={{color:'#ffffff',textDecoration:'none'}}>{index + 1}.{item.title}</Link></p>
                         ))}
-                        <p><a href="https://jiangenb.github.io/Thunder/index.html">飞机大战</a></p>
-                        <p><a href="https://jiangenb.github.io/snake/index.html">贪吃蛇</a></p>
+                        <p><a href="https://jiangenb.github.io/Thunder/index.html" target='blank'>飞机大战</a></p>
+                        <p><a href="https://jiangenb.github.io/snake/index.html" target='blank'>贪吃蛇</a></p>
                     </div>
                 </div>
                 <div>
