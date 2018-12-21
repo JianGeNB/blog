@@ -4,63 +4,80 @@ import './self.scss';
 // 引入 ECharts 主模块
 import echarts from 'echarts/lib/echarts';
 // 引入柱状图
-import  'echarts/lib/chart/pie';
+import 'echarts/lib/chart/pie';
 // 引入提示框和标题组件
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
-class Self extends React.Component{
-    componentDidMount(){
+class Self extends React.Component {
+    componentDidMount() {
         let skillChart = echarts.init(document.getElementById('skill'));
         // 绘制图表
         skillChart.setOption({
-            title: { 
+            title: {
                 text: '技能饼图',
-                textStyle:{
-                    color:'white'
+                textStyle: {
+                    color: 'white'
                 }
             },
             tooltip: {
                 formatter(params) {
                     let tooltip = `<div>`
                     let q = `<span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:${params.color};"></span>`
-                    tooltip += q +params.name;
-                    tooltip +=`</div>`
+                    tooltip += q + params.name;
+                    tooltip += `</div>`
                     return tooltip
                 }
             },
-            legend:{
-                textStyle:{
-                    color:'white'
+            legend: {
+                textStyle: {
+                    color: 'white'
                 },
-                bottom:0,
-                data:['HTML','CSS/SCSS','JavaScript/Jquery','React全家桶','Vue全家桶','Express/Koa2']
+                bottom: 0,
+                data: ['HTML', 'CSS/SCSS', 'JavaScript/Jquery', 'React全家桶', 'Flutter', 'Vue全家桶', 'Express/Koa2']
             },
-            series:[
+            series: [
                 {
                     type: 'pie',
-                    radius : '65%',
+                    radius: '65%',
                     center: ['50%', '50%'],
                     selectedMode: 'single',
-                    data:[
-                        {value:1,name: 'HTML',itemStyle:{
-                            color:'#FFDE40'
-                        }},
-                        {value:1, name: 'CSS/SCSS',itemStyle:{
-                            color:'#FFE773'
-                        }},
-                        {value:1, name: 'JavaScript/Jquery',itemStyle:{
-                            color:'#BFBF30'
-                        }},
-                        {value:1, name: 'React全家桶',itemStyle:{
-                            color:'#A6A600'
-                        }},
-                        {value:1, name: 'Vue全家桶',itemStyle:{
-                            color:'#412C84'
-                        }},
-                        {value:1,name:'Express/Koa2',itemStyle:{
-                            color:'#200772'
-                        }}
+                    data: [
+                        {
+                            value: 1, name: 'HTML', itemStyle: {
+                                color: '#FFDE40'
+                            }
+                        },
+                        {
+                            value: 1, name: 'CSS/SCSS', itemStyle: {
+                                color: '#FFE773'
+                            }
+                        },
+                        {
+                            value: 1, name: 'JavaScript/Jquery', itemStyle: {
+                                color: '#BFBF30'
+                            }
+                        },
+                        {
+                            value: 1, name: 'React全家桶', itemStyle: {
+                                color: '#A6A600'
+                            }
+                        },
+                        {
+                            value: 1, name: 'Flutter', itemStyle: {
+                                color: '#C437D3'
+                            }
+                        },
+                        {
+                            value: 1, name: 'Vue全家桶', itemStyle: {
+                                color: '#412C84'
+                            }
+                        },
+                        {
+                            value: 1, name: 'Express/Koa2', itemStyle: {
+                                color: '#200772'
+                            }
+                        }
                     ],
                     itemStyle: {
                         emphasis: {
@@ -71,11 +88,11 @@ class Self extends React.Component{
                     }
                 }
             ]
-                    
+
         });
     }
-    render(){
-        return(
+    render() {
+        return (
             <div className='content'>
                 <h1 className='title'>关于我</h1>
                 <div className='introduce'>
@@ -88,7 +105,7 @@ class Self extends React.Component{
                     <h2>个人简介</h2>
                     <div>内蒙人,毕业于江苏无锡江南大学,菜鸡一个,目前从事5个月的前端开发工作</div>
                     <h2>技能展示</h2>
-                    <div id='skill' style={{width:'100%',height:'28rem'}}></div>
+                    <div id='skill' style={{ width: '100%', height: '28rem' }}></div>
                 </div>
             </div>
         )
